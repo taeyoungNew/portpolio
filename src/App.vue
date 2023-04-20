@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <app-header></app-header>
+    <app-header class="abb-header"></app-header>
+    <night-sky></night-sky>
     <router-view />
     <footer-component></footer-component>
   </div>
@@ -9,10 +10,12 @@
 <script>
 import appHeader from "@/components/common/AppHeader.vue";
 import FooterComponent from "@/components/common/FooterComponent.vue";
+import NightSky from "@/components/NightSky.vue";
 export default {
   components: {
     appHeader,
     FooterComponent,
+    NightSky,
   },
 };
 </script>
@@ -39,5 +42,13 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.abb-header {
+  position: absolute;
+  display: inline-block;
+  color: #ffffff;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 </style>

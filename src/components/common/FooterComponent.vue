@@ -3,9 +3,9 @@
     <footer>
       <div class="footer-icons">
         <a href="">
-          <img src="@/images/github.png" alt="" />
+          <img src="@/images/github-logo.png" alt="" />
         </a>
-        <img class="email-logo" src="@/images/mail_icon.png" alt="" />
+        <img class="email-logo" src="@/images/mail-logo.png" alt="" />
         <!-- <img src="@/images/mobile_phone_icon.png" alt="" />
         <img src="@/images/pointer_place_icon.png" alt="" /> -->
       </div>

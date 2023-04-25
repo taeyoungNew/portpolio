@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="container">
+      <h1>꿈을 꾸는 개발자 민태영입니다.</h1>
       <div class="star star-1"></div>
       <div class="star star-2"></div>
       <div class="star star-3"></div>
@@ -21,11 +22,38 @@ export default {};
 
 <style scoped>
 .container {
+  /* position: relative; */
   background-color: #113755;
   width: 100vw;
   height: 100vh;
   left: 0;
   top: 0;
+}
+
+h1 {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #ffffff;
+  transform: translate(-50%, -50%);
+  font-weight: 500;
+  opacity: 1;
+
+  transform: 0.5s;
+  animation: title 2s;
+}
+
+@keyframes title {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .moon {

@@ -9,19 +9,16 @@
             <div class="skill-card">
               <div>
                 <span class="img"> </span>
-                <p>설명</p>
               </div>
             </div>
             <div class="skill-card">
               <div>
                 <span class="img"> </span>
-                <p>설명</p>
               </div>
             </div>
             <div class="skill-card">
               <div>
                 <span class="img"> </span>
-                <p>설명</p>
               </div>
             </div>
           </div>
@@ -33,7 +30,6 @@
               <div class="skill-card">
                 <div>
                   <span class="img"> </span>
-                  <p>설명</p>
                 </div>
               </div>
             </div>
@@ -41,7 +37,6 @@
               <div class="skill-card">
                 <div>
                   <span class="img"> </span>
-                  <p>설명</p>
                 </div>
               </div>
             </div>
@@ -54,7 +49,6 @@
               <div>
                 <div>
                   <span class="img"> </span>
-                  <p>설명</p>
                 </div>
               </div>
             </div>
@@ -62,13 +56,37 @@
               <div>
                 <div>
                   <span class="img"> </span>
-                  <p>설명</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="tool"></div>
+        <div class="tool">
+          <h3>tool/version control</h3>
+          <div>
+            <div class="skill-card">
+              <div>
+                <div>
+                  <span class="img"> </span>
+                </div>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div>
+                <div>
+                  <span class="img"> </span>
+                </div>
+              </div>
+            </div>
+            <div class="skill-card">
+              <div>
+                <div>
+                  <span class="img"> </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -79,17 +97,29 @@
 import { mdiVuejs } from "@mdi/js";
 export default {
   components: {},
+  mounted() {
+    let event = document.getElementsByClassName("skill-card");
+    console.log(event[0]);
+    // event[1].addEventListener("mouseenter", this.mouseEnter);
+    // test.addeventlistener("mouseenter", this.mouseEnter, false);
+    // console.log(test);
+  },
   data() {
     return {
       mdiVuejs: mdiVuejs,
     };
+  },
+  methods: {
+    mouseEnter(e) {
+      console.log("여기요", e.target);
+    },
   },
 };
 </script>
 
 <style scoped>
 .container {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   padding: 10px;
   box-sizing: border-box;
 }
@@ -114,8 +144,8 @@ h3 {
 .skill-card {
   display: block;
   /* border: 1px solid black; */
-  width: 150px;
-  height: 200px;
+  width: 200px;
+  height: 250px;
 }
 
 .skill-card div {
@@ -138,22 +168,32 @@ h3 {
 }
 
 .skill-box .front div .skill-card:nth-child(2) div span {
-  background-image: url("@/images/free-icon-css.png");
+  background-image: url("@/images/css-logo.png");
 }
 .skill-box .front div .skill-card:nth-child(3) div span {
-  background-image: url("@/images/free-icon-js.png");
+  background-image: url("@/images/js-logo.png");
 }
 .skill-box .frame-work div .skill-card:nth-child(1) div span {
-  background-image: url("@/images/Vue-icon.png");
+  background-image: url("@/images/vue-logo.png");
 }
 .skill-box .frame-work div .skill-card:nth-child(2) div span {
-  background-image: url("@/images/Nuxt_logo.png");
+  background-image: url("@/images/nuxt-logo.png");
 }
 .skill-box .back div .skill-card:nth-child(1) div span {
   background-image: url("@/images/node-logo.png");
 }
 
 .skill-box .back div .skill-card:nth-child(2) div span {
-  background-image: url("@/images/mysql-icon.png");
+  background-image: url("@/images/mysql-logo.png");
+}
+
+.skill-box .tool div .skill-card:nth-child(1) div span {
+  background-image: url("@/images/vscode-logo.png");
+}
+.skill-box .tool div .skill-card:nth-child(2) div span {
+  background-image: url("@/images/github-logo.png");
+}
+.skill-box .tool div .skill-card:nth-child(3) div span {
+  background-image: url("@/images/git-logo.png");
 }
 </style>

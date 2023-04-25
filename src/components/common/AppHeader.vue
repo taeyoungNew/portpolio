@@ -24,14 +24,12 @@ h3 {
 }
 .container {
   height: 40px;
-  border: 1px solid black;
   display: flex;
   align-items: center;
   line-height: 40px;
   padding: 10px;
   box-sizing: border-box;
   position: relative;
-  /* justify-content: center; */
 }
 
 .nav-list {

@@ -5,7 +5,11 @@
       <div>
         <div class="picture">
           <img src="@/images/증명사진.jpg" alt="" />
-          <p>안녕하세여</p>
+          <h4>안녕하세여</h4>
+          <p>
+            전 직장에서 우연한 계기로 프로그래밍을 접한 후 개발자에 대한 매력과
+            동경으로 웹개발자를 희망하게 되었습니다.
+          </p>
         </div>
         <div class="about-me">
           <span>
@@ -50,7 +54,7 @@ export default {};
 
 <style scoped>
 .container {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   /* margin-left: auto;
   margin-right: auto; */
   /* box-sizing: border-box; */
@@ -59,13 +63,19 @@ export default {};
 .container > div {
   margin-top: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   box-sizing: border-box;
 }
 
 .container > div div {
   padding: 0 50px;
 }
+
+.picture {
+  width: 230px;
+  /* height: 300px; */
+}
+
 .picture img {
   width: 230px;
   height: 300px;
@@ -74,10 +84,16 @@ h2 {
   text-align: center;
   font-weight: 800;
 }
+h4 {
+  margin-bottom: 5px;
+}
 h5 {
   display: inline-block;
   font-weight: 700;
   font-size: 15px;
+}
+p {
+  margin: 0;
 }
 
 .about-me {
@@ -87,7 +103,7 @@ h5 {
 }
 
 .about-me span {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   flex-grow: 0.5;
 }
 </style>

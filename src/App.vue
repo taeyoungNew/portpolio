@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <app-header class="abb-header"></app-header>
+    <app-header
+      id="app-header"
+      class="abb-header"
+      :class="{ active: isActive }"
+    ></app-header>
     <night-sky></night-sky>
     <router-view />
     <footer-component></footer-component>
@@ -17,6 +21,27 @@ export default {
     FooterComponent,
     NightSky,
   },
+  data() {
+    return {
+      isActive: false,
+    };
+  },
+  mounted() {
+    // document.documentElement.scrollTop; // 현재 스크롤바 위치
+    // windowHeight = window.innerHeight; // 스크린 창
+    // document.body.scrollHeight; // margin 값은 포함 x
+    window.addEventListener("scroll", () => {
+      let scrollLocation = document.documentElement.scrollTop;
+
+      if (scrollLocation > 0) {
+        this.isActive = true;
+      } else {
+        this.isActive = false;
+      }
+    });
+  },
+
+  methods: {},
 };
 </script>
 
@@ -45,10 +70,16 @@ nav a.router-link-exact-active {
 }
 
 .abb-header {
-  position: absolute;
+  position: fixed;
   display: inline-block;
   color: #ffffff;
+  top: -40px;
   left: 50%;
   transform: translate(-50%, 0);
+  transition: 0.5s;
+}
+
+.active {
+  top: 0px;
 }
 </style>

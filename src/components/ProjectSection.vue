@@ -7,14 +7,14 @@
         <input type="radio" name="tabmenu" id="tab2" />
         <input type="radio" name="tabmenu" id="tab3" />
         <div class="slide">
-          <div
-            class="slide-inner"
-            v-for="(data, index1) in projectsData"
-            :key="index1"
-          >
-            <div class="project-box">
+          <div class="slide-inner">
+            <div
+              class="project-box"
+              v-for="(data, index1) in projectsData"
+              :key="index1"
+            >
               <div class="img">
-                <img :src="require(`../images/projectImg${data.img}`)" alt="" />
+                <img :src="`${data.img}`" alt="" />
               </div>
               <div class="back-ground">
                 <div class="project-manual">
@@ -29,9 +29,9 @@
                     <li>{{ li1 }}</li>
                   </ul>
                   <h3>사용된 언어</h3>
-                  <ul v-for="(li2, index3) in data.languages" :key="index3">
-                    <li>{{ li2 }}</li>
-                  </ul>
+                  <div v-for="(li2, index3) in data.languages" :key="index3">
+                    <span>{{ li2 }}</span>
+                  </div>
                   <h3>제작기간</h3>
                   <p>202207 ~ 202208</p>
                 </div>
@@ -116,7 +116,7 @@ export default {
     return {
       projectsData: [
         {
-          img: "today-weather.png",
+          img: require("@/images/projectImg/today-weather.png"),
           projectTitle: "today's weather",
           projectOutLine:
             "전국의 기상상태와 공기오염상태를 검색하고 한눈에 볼 수 있는 사이트",
@@ -130,7 +130,7 @@ export default {
           languages: ["Vue", "vuetify", "js", "css"],
         },
         {
-          img: "my-todos.png",
+          img: require("@/images/projectImg/my-todo.png"),
           projectTitle: "My Todos",
           projectOutLine: "데이터를 저장가능한 Todolist",
           siteFeatures: [
@@ -187,11 +187,12 @@ input[name="tabmenu"] {
   width: inherit;
   margin-left: auto;
   margin-right: auto;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 .slide-inner {
   border: 1px solid black;
   display: flex;
+  justify-content: start;
   width: 300%;
   height: 680px;
   position: absolute;
@@ -200,12 +201,12 @@ input[name="tabmenu"] {
   transition: 0.5s;
 }
 .project-box {
-  width: inherit;
+  /* width: inherit; */
   position: relative;
 }
 
 .project-box:nth-child(1) > .back-ground {
-  display: inline-block;
+  display: none;
   position: absolute;
   top: 100%;
   width: 900px;
@@ -216,7 +217,7 @@ input[name="tabmenu"] {
 }
 .project-box:nth-child(1) > .back-ground > .project-manual {
   /* background-color: antiquewhite; */
-  display: inline-block;
+  display: none;
   position: absolute;
   top: 0%;
   right: 0%;
@@ -236,6 +237,56 @@ input[name="tabmenu"] {
 }
 
 .project-box:nth-child(1):hover > .back-ground .project-manual {
+  display: inline-block;
+  top: 0;
+  background-color: white;
+  animation: showManual 0.7s;
+  opacity: 1;
+}
+
+@keyframes showManual {
+  0% {
+    top: 100%;
+    opacity: 0;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+.project-box:nth-child(2) > .back-ground {
+  display: none;
+  position: absolute;
+  top: 100%;
+  width: 900px;
+  height: 100%;
+  /* background-color: rgba(255, 255, 255, 0.5); */
+  background-color: red;
+  opacity: 1;
+}
+.project-box:nth-child(2) > .back-ground > .project-manual {
+  /* background-color: antiquewhite; */
+  display: none;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  width: 40%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  opacity: 1;
+  animation-timing-function: linear;
+}
+
+.project-box:nth-child(2):hover > .back-ground {
+  display: inline-block;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  animation: showManual 0.7s;
+}
+
+.project-box:nth-child(2):hover > .back-ground .project-manual {
   display: inline-block;
   top: 0;
   background-color: white;
@@ -297,6 +348,7 @@ input[name="tabmenu"] {
   z-index: 100;
   font-size: 20px;
   text-align: start;
+  width: 80%;
   border-bottom: 1px solid rgba(199, 190, 190, 0.5);
 }
 .project-box .project-manual h3 {

@@ -9,6 +9,16 @@ const routes = [
     name: "home",
     component: () => import("@/views/MainPage.vue"),
   },
+  {
+    path: "/today-weather",
+    name: "today's weather",
+    component: () => import("@/views/TodayWeather.vue"),
+  },
+  {
+    path: "/my-todos",
+    name: "my todos",
+    component: () => import("@/views/MyTodos.vue"),
+  },
 ];
 
 const router = new VueRouter({

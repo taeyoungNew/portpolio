@@ -22,12 +22,14 @@ export default {};
 
 <style scoped>
 .container {
-  /* position: relative; */
+  position: relative;
   background-color: #113755;
   width: 100vw;
   height: 100vh;
   left: 0;
   top: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h1 {

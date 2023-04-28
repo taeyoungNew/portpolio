@@ -27,11 +27,7 @@
               style="transition: 0.5s"
             ></div>
           </div>
-          <p
-            class="card-text"
-            :class="skill.name"
-            v-bind:style="{ backgroundColor: skill.backColor }"
-          >
+          <p class="card-text" :class="skill.name">
             {{ skill.text }}
           </p>
         </div>
@@ -190,7 +186,7 @@ img {
   background-color: #ffff;
   border-radius: 1px;
   padding: 5px;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
   position: relative;
   cursor: pointer;
 }
@@ -333,22 +329,38 @@ p {
   /* display: inline-block; */
   position: absolute;
   /* top: 0; */
-  transition: 0.2s;
+  transition: 0.5s;
   opacity: 0;
 }
-
+/* 
 .show-card-text {
-  /* display: inline-block; */
+  font-size: 14px;
+  color: black;
   position: absolute;
   margin: 0;
   left: 50%;
   top: 79%;
   transform: translate(-50%, 0);
   transition: 0.3s;
-  opacity: 0.7;
+
   z-index: 10;
   animation: showText 1;
-}
+
+  margin-top: 15px;
+} */
+
+/* .show-card-text:after {
+  display: inline-block;
+  content: "";
+  background-color: black;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background-color: rgba(227, 76, 38, 0.3);
+} */
 
 @keyframes showText {
   0% {

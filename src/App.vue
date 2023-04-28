@@ -5,7 +5,6 @@
       class="abb-header"
       :class="{ active: isActive }"
     ></app-header>
-    <night-sky></night-sky>
     <router-view />
     <footer-component></footer-component>
   </div>
@@ -14,12 +13,11 @@
 <script>
 import appHeader from "@/components/common/AppHeader.vue";
 import FooterComponent from "@/components/common/FooterComponent.vue";
-import NightSky from "@/components/NightSky.vue";
+
 export default {
   components: {
     appHeader,
     FooterComponent,
-    NightSky,
   },
   data() {
     return {

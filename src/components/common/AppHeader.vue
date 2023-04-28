@@ -23,6 +23,8 @@ h3 {
   cursor: pointer;
 }
 .container {
+  width: 100vw;
+  max-width: 1200px;
   height: 40px;
   display: flex;
   align-items: center;

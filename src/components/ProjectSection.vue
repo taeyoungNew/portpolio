@@ -5,7 +5,7 @@
       <div class="tab-inner">
         <input type="radio" name="tabmenu" id="tab1" checked />
         <input type="radio" name="tabmenu" id="tab2" />
-        <input type="radio" name="tabmenu" id="tab3" />
+        <!-- <input type="radio" name="tabmenu" id="tab3" /> -->
         <div class="slide">
           <div class="slide-inner">
             <div
@@ -17,6 +17,10 @@
                 <img :src="`${data.img}`" alt="" />
               </div>
               <div class="back-ground">
+                <span class="button">
+                  learn more
+                  <router-link :to="data.pageLink"></router-link>
+                </span>
                 <div class="project-manual">
                   <h2>{{ data.projectTitle }}</h2>
                   <h3>개요</h3>
@@ -33,7 +37,7 @@
                     <span>{{ li2 }}</span>
                   </div>
                   <h3>제작기간</h3>
-                  <p>202207 ~ 202208</p>
+                  <p>{{ data.productionPeriod }}</p>
                 </div>
               </div>
             </div>
@@ -103,7 +107,7 @@
         <div class="btn">
           <label for="tab1"></label>
           <label for="tab2"></label>
-          <label for="tab3"></label>
+          <!-- <label for="tab3"></label> -->
         </div>
       </div>
     </div>
@@ -126,8 +130,9 @@ export default {
             " 현재 기온, 비, 습도, 풍속, 미세먼지, 초미세먼지, 오존일산화탄소 확인가능",
             "다음 날짜의 23시까지의 날씨데이터 확인 가능",
           ],
-
+          productionPeriod: "202207 ~ 202208",
           languages: ["Vue", "vuetify", "js", "css"],
+          pageLink: "/today-weather",
         },
         {
           img: require("@/images/projectImg/my-todo.png"),
@@ -138,8 +143,9 @@ export default {
             " 현재 기온, 비, 습도, 풍속, 미세먼지, 초미세먼지, 오존일산화탄소 확인가능",
             "다음 날짜의 23시까지의 날씨데이터 확인 가능",
           ],
-
+          productionPeriod: "202209 ~ 202210",
           languages: ["Nuxt", "Vue", "vuetify", "js", "css", "node", "MySql"],
+          pageLink: "/my-todos",
         },
       ],
     };
@@ -190,9 +196,8 @@ input[name="tabmenu"] {
   overflow: hidden;
 }
 .slide-inner {
-  border: 1px solid black;
+  border: 1px solid #ddd;
   display: flex;
-  justify-content: start;
   width: 300%;
   height: 680px;
   position: absolute;
@@ -212,10 +217,32 @@ input[name="tabmenu"] {
   width: 900px;
   height: 100%;
   /* background-color: rgba(255, 255, 255, 0.5); */
-  background-color: red;
+  /* background-color: black; */
   opacity: 1;
 }
-.project-box:nth-child(1) > .back-ground > .project-manual {
+
+.project-box > .back-ground > .button {
+  background-color: white;
+  display: inline-block;
+  border-radius: 10px;
+  width: 150px;
+  height: 40px;
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  justify-content: center;
+  line-height: 40px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.project-box > .back-ground > .button:hover {
+  color: white;
+  background: rgb(114, 114, 114);
+}
+.project-box > .back-ground > .project-manual {
   /* background-color: antiquewhite; */
   display: none;
   position: absolute;
@@ -265,6 +292,7 @@ input[name="tabmenu"] {
   background-color: red;
   opacity: 1;
 }
+
 .project-box:nth-child(2) > .back-ground > .project-manual {
   /* background-color: antiquewhite; */
   display: none;
@@ -293,7 +321,7 @@ input[name="tabmenu"] {
   animation: showManual 0.7s;
   opacity: 1;
 }
-
+/* 
 @keyframes showManual {
   0% {
     top: 100%;
@@ -303,7 +331,7 @@ input[name="tabmenu"] {
   100% {
     top: 0;
   }
-}
+} */
 
 /* .project-box:nth-child(1):not(:hover) > .back-ground {
   border: 1px solid black;

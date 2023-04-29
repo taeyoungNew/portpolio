@@ -27,9 +27,9 @@
               style="transition: 0.5s"
             ></div>
           </div>
-          <p class="card-text" :class="skill.name">
+          <!-- <p class="card-text" :class="skill.name">
             {{ skill.text }}
-          </p>
+          </p> -->
         </div>
       </div>
     </div>
@@ -183,7 +183,7 @@ img {
   height: 50px;
   width: 800px;
   margin: 0 auto;
-  background-color: #ffff;
+  /* background-color: #ffff; */
   border-radius: 1px;
   padding: 5px;
   margin-bottom: 20px;

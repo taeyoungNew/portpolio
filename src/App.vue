@@ -24,22 +24,12 @@ export default {
       isActive: false,
     };
   },
+  methods: {},
   mounted() {
     // document.documentElement.scrollTop; // 현재 스크롤바 위치
     // windowHeight = window.innerHeight; // 스크린 창
     // document.body.scrollHeight; // margin 값은 포함 x
-    window.addEventListener("scroll", () => {
-      let scrollLocation = document.documentElement.scrollTop;
-
-      if (scrollLocation > 0) {
-        this.isActive = true;
-      } else {
-        this.isActive = false;
-      }
-    });
   },
-
-  methods: {},
 };
 </script>
 
@@ -52,6 +42,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   /* text-align: center; */
   color: #2c3e50;
+}
+
+body {
+  background-color: #e4e5e6;
 }
 
 nav {

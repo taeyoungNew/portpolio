@@ -54,12 +54,8 @@ export default {};
 
 <style scoped>
 .container {
-  /* border: 1px solid black; */
-  /* margin-left: auto;
-  margin-right: auto; */
-  /* box-sizing: border-box; */
+  width: 1200px;
 }
-
 .container > div {
   margin-top: 10px;
   display: flex;

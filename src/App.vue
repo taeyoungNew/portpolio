@@ -29,6 +29,14 @@ export default {
     // document.documentElement.scrollTop; // 현재 스크롤바 위치
     // windowHeight = window.innerHeight; // 스크린 창
     // document.body.scrollHeight; // margin 값은 포함 x
+    window.addEventListener("scroll", () => {
+      let scrollLocation = document.documentElement.scrollTop;
+      if (scrollLocation > 0) {
+        this.isActive = true;
+      } else {
+        this.isActive = false;
+      }
+    });
   },
 };
 </script>

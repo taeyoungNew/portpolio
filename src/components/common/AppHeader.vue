@@ -23,6 +23,7 @@ h3 {
   cursor: pointer;
 }
 .container {
+  color: white;
   width: 100vw;
   max-width: 1200px;
   height: 40px;

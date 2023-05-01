@@ -39,6 +39,7 @@
 <script>
 import { mdiVuejs } from "@mdi/js";
 export default {
+  props: ["skillSecShow"],
   components: {},
   mounted() {},
   methods: {

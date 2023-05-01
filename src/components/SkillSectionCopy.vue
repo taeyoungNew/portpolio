@@ -10,26 +10,31 @@
           @mouseleave="closeText(skill.name)"
           :key="skill.name"
         >
-          <span class="skill-name" v-bind:style="{ color: skill.color }">{{
-            skill.name
-          }}</span>
-          <div
-            class="progress-bar"
-            :style="{ backgroundColor: skill.backColor }"
-          >
+          <div class="side skill-box-frot">
+            <span class="skill-name" v-bind:style="{ color: skill.color }">{{
+              skill.name
+            }}</span>
             <div
-              class="progress"
-              :class="{ actives: skill.name }"
-              v-bind:style="{
-                width: skill.percent,
-                backgroundColor: skill.color,
-              }"
-              style="transition: 0.5s"
-            ></div>
+              class="progress-bar"
+              :style="{ backgroundColor: skill.backColor }"
+            >
+              <div
+                class="progress"
+                :class="{ actives: skill.name }"
+                v-bind:style="{
+                  width: skill.percent,
+                  backgroundColor: skill.color,
+                }"
+                style="transition: 0.5s"
+              ></div>
+            </div>
           </div>
           <!-- <p class="card-text" :class="skill.name">
             {{ skill.text }}
           </p> -->
+          <div class="side skill-box-back">
+            {{ skill.text }}
+          </div>
         </div>
       </div>
     </div>
@@ -78,7 +83,7 @@ export default {
           name: "html",
           Logo: "html-logo.png",
           percent: "70%",
-          text: "기본적인 것을 사용가능",
+          text: "기본적인 웹페이지를 구조화 할 수 있고 ",
           color: "#e34c26",
           backColor: "rgba(227, 76, 38, 0.3)",
         },
@@ -184,16 +189,44 @@ img {
   height: 50px;
   width: 800px;
   margin: 0 auto;
-  /* background-color: #ffff; */
-  border-radius: 1px;
+  background-color: #ffff;
+  border-radius: 5px;
   padding: 5px;
   margin-bottom: 20px;
   position: relative;
   cursor: pointer;
+  transition: 0.5s ease-in-out;
+  transform-style: preserve-3d;
+}
+.skill-box:hover {
+  transform: rotateX(180deg);
+}
+.side {
+  backface-visibility: hidden;
 }
 .skill-box .skill-name {
   display: inline-block;
   margin-bottom: 5px;
+}
+.skill-box .skill-box-front,
+.skill-box-back {
+  width: 800px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.skill-box .skill-box-front {
+  backface-visibility: hidden;
+}
+
+.skill-box .skill-box-back {
+  padding: 5px;
+  display: inline-block;
+  height: inherit;
+  /* border: 1px solid black; */
+  transform: rotateX(180deg);
+  font-size: 14px;
 }
 
 .progress-bar {
